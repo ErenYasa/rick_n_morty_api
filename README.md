@@ -1,1 +1,1 @@
-# rick_n_morty_api
+# rick_n_morty_api with tsx
