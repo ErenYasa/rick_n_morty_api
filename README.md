@@ -1,1 +1,12 @@
-# rick_n_morty_api with tsx
+# RICK AND MORTY API
+
+---
+
+-   TypeScript
+-   Sass
+-   Styled-components
+-   Redux toolkit
+-   Redux toolkit Query
+-   Pnpm
+-   Husky
+-   Vite
