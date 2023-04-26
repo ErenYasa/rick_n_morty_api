@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux';
 import { useLayoutEffect } from 'react';
 import { setMobileView } from './store/slices/app.slice';
 import { Logo } from './components/Icons/Icons';
-import { FilterButton } from './styles/components/FilterButtons';
+import { FilterButtons } from './components/FilterButtons/FilterButtons';
 
 function App() {
     const dispatch = useDispatch();
@@ -25,7 +25,9 @@ function App() {
                 <Logo width="210px" height="60" />
                 <br />
                 <br />
-                <FilterButton status="ALIVE" />
+                <FilterButtons status="alive" disabled />
+                <FilterButtons status="dead" disabled />
+                <FilterButtons status="unknown" disabled />
             </div>
         </>
     );

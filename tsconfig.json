@@ -20,5 +20,8 @@
         "emitDeclarationOnly": true,
         "allowImportingTsExtensions": true
     },
+    "resolve": {
+        "extensions": [".ts", ".tsx", ".js"]
+    },
     "include": ["src", "src/**/*.ts", "./eslintrc.cjs"]
 }

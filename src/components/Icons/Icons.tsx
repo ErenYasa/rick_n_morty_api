@@ -47,3 +47,14 @@ export const Logo = (props: IIconProps) => (
             fill="#11B0C8"></path>
     </svg>
 );
+
+export const Dot = (props: IIconProps) => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 12 12"
+        className={props.className}
+        width={props.width}
+        height={props.height}>
+        <circle cx="6" cy="6" r="6" fill="currentColor"></circle>
+    </svg>
+);
