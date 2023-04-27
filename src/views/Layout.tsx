@@ -1,23 +1,29 @@
 import React, { Fragment, ReactElement, ReactNode } from 'react';
 import classNames from 'classnames';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { LayoutStyle } from '../styles/layout/LayoutStyle';
-import { Logo } from '../components/Icons/Icons';
+import * as Icon from '../components/Icons/Icons';
 import { HeaderStyle } from '../styles/components/HeaderStyle';
+import { LayoutContainerStyle } from '../styles/components/LayoutContainerStyle';
+import { BackButton } from '../components/Buttons/BackButton';
 
 export const Layout: React.FC<{ children: ReactNode; customClass?: string }> = ({
     children,
     customClass,
 }): ReactElement => {
+    const navigate = useNavigate();
+    const location = useLocation();
+
     const layoutClasses = classNames(customClass);
-    const contentClasses = classNames('page-layout-container');
 
     return (
         <Fragment>
             <HeaderStyle>
-                <Logo width="210px" height="60" />
+                {location && location.pathname !== '/' && <BackButton onClick={() => navigate(-1)} />}
+                <Icon.Logo width="210px" height="60" className="logo" />
             </HeaderStyle>
             <LayoutStyle className={layoutClasses}>
-                <div className={contentClasses}>{children}</div>
+                <LayoutContainerStyle>{children}</LayoutContainerStyle>
             </LayoutStyle>
         </Fragment>
     );

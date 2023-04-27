@@ -1,10 +1,7 @@
 import styled, { css } from 'styled-components';
 import { Theme } from '../Theme';
 import { PHONEOUT } from '../abstracts/Mixins';
-
-interface IFilterButtonsStyle {
-    status: string;
-}
+import { IFilterButtonsStyle } from './interfaces/backButtonStyle.interface';
 
 export const FilterButtonsStyle = styled.button<IFilterButtonsStyle>`
     display: flex;

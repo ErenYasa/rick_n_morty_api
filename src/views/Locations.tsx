@@ -1,5 +1,5 @@
 import React from 'react';
-import { FilterButtons } from '../components/FilterButtons/FilterButtons';
+import { FilterButtons } from '../components/Buttons/FilterButtons';
 
 export default function Locations() {
     return (
