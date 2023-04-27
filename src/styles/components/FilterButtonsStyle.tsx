@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import { Theme } from '../Theme';
+import { PHONEOUT } from '../abstracts/Mixins';
 
 interface IFilterButtonsStyle {
     status: string;
@@ -32,13 +33,19 @@ export const FilterButtonsStyle = styled.button<IFilterButtonsStyle>`
             border-color: #98cd4d;
             background-color: #98cd4d0d;
 
+            &:active {
+                background-color: #98cd4d80;
+            }
+
             &.disabled {
                 border-color: #98cd4d80;
             }
 
-            &:hover {
-                background-color: #98cd4d33;
-            }
+            ${PHONEOUT(css`
+                &:hover {
+                    background-color: #98cd4d33;
+                }
+            `)}
         `}
 
     ${({ status }) =>
@@ -47,13 +54,19 @@ export const FilterButtonsStyle = styled.button<IFilterButtonsStyle>`
             border-color: #b90000;
             background-color: #b900000d;
 
+            &:focus {
+                background-color: #b9000080;
+            }
+
             &.disabled {
                 border-color: #b9000080;
             }
 
-            &:hover {
-                background-color: #b9000033;
-            }
+            ${PHONEOUT(css`
+                &:hover {
+                    background-color: #b9000033;
+                }
+            `)}
         `}
 
     ${({ status }) =>
@@ -62,13 +75,19 @@ export const FilterButtonsStyle = styled.button<IFilterButtonsStyle>`
             border-color: #b8b8b8;
             background-color: #b8b8b80d;
 
+            &:focus {
+                background-color: #b8b8b880;
+            }
+
             &.disabled {
                 border-color: #b8b8b880;
             }
 
-            &:hover {
-                background-color: #b8b8b833;
-            }
+            ${PHONEOUT(css`
+                &:hover {
+                    background-color: #b8b8b833;
+                }
+            `)}
         `}
 
     svg {
