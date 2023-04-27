@@ -26,8 +26,8 @@ export const GlobalStyles = createGlobalStyle`
         /* TEST */
         ${PHONE(
             css`
-                height: 50%;
-                width: 100px;
+                /* height: 50%;
+                width: 100px; */
             `,
         )}
 

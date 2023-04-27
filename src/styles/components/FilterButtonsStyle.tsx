@@ -11,7 +11,7 @@ export const FilterButtonsStyle = styled.button<IFilterButtonsStyle>`
     padding: 1.4rem 1.1rem;
     font-weight: 500;
     font-size: 1.3rem;
-    border-radius: 5rem;
+    border-radius: ${() => Theme.radius.filterButton};
     border: 0.1rem solid;
     color: ${() => Theme.colors.dark};
 

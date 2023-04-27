@@ -17,12 +17,21 @@ export const Theme = {
         danger: '',
         success: '#66A15A',
     },
-    typography: {},
+    typography: {
+        small: '1.3rem',
+        mid: '1.6rem',
+        large: '1.8rem',
+        xlarge: '2.4rem',
+    },
     paddings: {
         container: '15px',
         pageTop: '30px',
     },
     margins: {
         pageTop: '30px',
+    },
+    radius: {
+        card: '1.5rem',
+        filterButton: '5rem',
     },
 };
