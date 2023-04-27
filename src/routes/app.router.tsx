@@ -1,4 +1,5 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { Layout } from '../views/Layout';
 import Characters from '../views/Characters';
 import Locations from '../views/Locations';
 import CharactersDetail from '../views/CharactersDetail';
@@ -8,17 +9,29 @@ export const Routes = () => {
     const router = createBrowserRouter([
         {
             path: '/',
-            element: <Locations />,
+            element: (
+                <Layout>
+                    <Locations />
+                </Layout>
+            ),
             errorElement: <ErrorPage />,
         },
         {
             path: '/characters',
-            element: <Characters />,
+            element: (
+                <Layout>
+                    <Characters />
+                </Layout>
+            ),
             errorElement: <ErrorPage />,
         },
         {
             path: '/detail',
-            element: <CharactersDetail />,
+            element: (
+                <Layout>
+                    <CharactersDetail />
+                </Layout>
+            ),
             errorElement: <ErrorPage />,
         },
     ]);

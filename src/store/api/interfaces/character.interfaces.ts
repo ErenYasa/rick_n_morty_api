@@ -25,9 +25,18 @@ export interface ICharacterResult {
     created: string;
 }
 
-export interface IGetCharacters {
+export interface IGetCharactersResponse {
     info: IInfo;
     results: ICharacterResult[];
 }
 
-export type IGetCharacter = ICharacterResult;
+export type IGetCharacterResponse = ICharacterResult;
+
+export interface IGetCharacters {
+    page?: string;
+    name?: string;
+    status?: string;
+    species?: string;
+    type?: string;
+    gender?: string;
+}

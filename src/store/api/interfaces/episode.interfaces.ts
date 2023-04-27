@@ -10,9 +10,15 @@ export interface IEpisodeResult {
     created: string;
 }
 
-export interface IGetEpisodes {
+export interface IGetEpisodesResponse {
     info: IInfo;
     results: IEpisodeResult;
 }
 
-export type IGetEpisode = IEpisodeResult;
+export type IGetEpisodeResponse = IEpisodeResult;
+
+export interface IGetEpisodes {
+    page?: string;
+    name?: string;
+    episode?: string;
+}

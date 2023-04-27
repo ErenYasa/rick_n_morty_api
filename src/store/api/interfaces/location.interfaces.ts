@@ -10,9 +10,16 @@ export interface ILocationResult {
     created: string;
 }
 
-export interface IGetLocations {
+export interface IGetLocationsResponse {
     info: IInfo;
     results: ILocationResult[];
 }
 
-export type IGetLocation = ILocationResult;
+export type IGetLocationResponse = ILocationResult;
+
+export interface IGetLocations {
+    page?: string;
+    name?: string;
+    type?: string;
+    dimension?: string;
+}
