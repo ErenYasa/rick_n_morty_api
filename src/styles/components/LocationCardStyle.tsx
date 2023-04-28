@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 import { Theme } from '../Theme';
-import { ILocationCardStyle } from './interfaces/locationCardStyle.interface';
 
-const LocationCard = styled.div`
+export const Card = styled.div`
     max-width: 44rem;
     padding: 1.5rem 2.5rem;
     border-radius: ${() => Theme.radius.card};
@@ -10,15 +9,15 @@ const LocationCard = styled.div`
     cursor: pointer;
 `;
 
-const Header = styled.div`
+export const Header = styled.div`
     margin-bottom: 1rem;
     font-size: ${() => Theme.typography.large};
     font-weight: 500;
 `;
 
-const Content = styled.div``;
+export const Content = styled.div``;
 
-const DetailRow = styled.div`
+export const DetailRow = styled.div`
     display: flex;
 
     &:not(:last-child) {
@@ -26,32 +25,12 @@ const DetailRow = styled.div`
     }
 `;
 
-const DetailRowLeft = styled.div`
+export const DetailRowLeft = styled.div`
     width: 13rem;
     font-size: ${() => Theme.typography.small};
 `;
 
-const DetailRowRight = styled.div`
+export const DetailRowRight = styled.div`
     font-size: ${() => Theme.typography.small};
     font-weight: 500;
 `;
-
-export const LocationCardStyle = ({ name, type, dimension, residentCount }: ILocationCardStyle) => (
-    <LocationCard>
-        <Header>Earth (C-137)</Header>
-        <Content>
-            <DetailRow>
-                <DetailRowLeft>Type</DetailRowLeft>
-                <DetailRowRight> : planet</DetailRowRight>
-            </DetailRow>
-            <DetailRow>
-                <DetailRowLeft>Dimension</DetailRowLeft>
-                <DetailRowRight> : C-123</DetailRowRight>
-            </DetailRow>
-            <DetailRow>
-                <DetailRowLeft>Resident count</DetailRowLeft>
-                <DetailRowRight> : 23</DetailRowRight>
-            </DetailRow>
-        </Content>
-    </LocationCard>
-);
