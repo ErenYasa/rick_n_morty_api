@@ -7,6 +7,7 @@ export const Theme = {
         pink: '#E899C7',
         background: '#FFFFFF',
         text: '#000000',
+        placeholderGrey: '#D9D9D9',
         primaryTextColor: '#594F43',
         secondaryTextColor: '#777777',
         inputPlaceholder: '#C7C7C7',

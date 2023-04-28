@@ -7,6 +7,7 @@ const LocationCard = styled.div`
     padding: 1.5rem 2.5rem;
     border-radius: ${() => Theme.radius.card};
     background-color: ${() => Theme.colors.primary};
+    cursor: pointer;
 `;
 
 const Header = styled.div`
@@ -18,16 +19,19 @@ const Header = styled.div`
 const Content = styled.div``;
 
 const DetailRow = styled.div`
+    display: flex;
+
     &:not(:last-child) {
         margin-bottom: 0.2rem;
     }
 `;
 
-const DetailRowLeft = styled.span`
+const DetailRowLeft = styled.div`
+    width: 13rem;
     font-size: ${() => Theme.typography.small};
 `;
 
-const DetailRowRight = styled.span`
+const DetailRowRight = styled.div`
     font-size: ${() => Theme.typography.small};
     font-weight: 500;
 `;
@@ -37,16 +41,16 @@ export const LocationCardStyle = ({ name, type, dimension, residentCount }: ILoc
         <Header>Earth (C-137)</Header>
         <Content>
             <DetailRow>
-                <DetailRowLeft>Type: </DetailRowLeft>
-                <DetailRowRight>planet</DetailRowRight>
+                <DetailRowLeft>Type</DetailRowLeft>
+                <DetailRowRight> : planet</DetailRowRight>
             </DetailRow>
             <DetailRow>
-                <DetailRowLeft>Dimension: </DetailRowLeft>
-                <DetailRowRight>C-123</DetailRowRight>
+                <DetailRowLeft>Dimension</DetailRowLeft>
+                <DetailRowRight> : C-123</DetailRowRight>
             </DetailRow>
             <DetailRow>
-                <DetailRowLeft>Resident count: </DetailRowLeft>
-                <DetailRowRight>23</DetailRowRight>
+                <DetailRowLeft>Resident count</DetailRowLeft>
+                <DetailRowRight> : 23</DetailRowRight>
             </DetailRow>
         </Content>
     </LocationCard>
