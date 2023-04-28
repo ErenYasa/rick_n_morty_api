@@ -1,6 +1,12 @@
 import React from 'react';
-import { CharacterDetailContainer } from '../styles/Views/CharacterDetailStyle';
+import {
+    CharacterDetailContainer,
+    OtherCharacters,
+    OtherCharactersContainer,
+    OtherCharactersTitle,
+} from '../styles/Views/CharacterDetailStyle';
 import CharacterDetailCard from '../components/Cards/CharacterDetailCard';
+import OtherCharacterCard from '../components/Cards/OtherCharacterCard';
 
 export default function CharactersDetail() {
     return (
@@ -12,7 +18,12 @@ export default function CharactersDetail() {
                 species="Human"
                 locationName="Narnia"
             />
-            <div>other characters</div>
+            <OtherCharactersContainer>
+                <OtherCharactersTitle>Other Characters</OtherCharactersTitle>
+                <OtherCharacters>
+                    <OtherCharacterCard />
+                </OtherCharacters>
+            </OtherCharactersContainer>
         </CharacterDetailContainer>
     );
 }

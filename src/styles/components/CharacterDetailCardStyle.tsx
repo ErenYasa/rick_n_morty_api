@@ -52,6 +52,7 @@ export const DetailTopRight = styled.div`
     font-size: ${() => Theme.typography.small};
     font-weight: 300;
     font-style: italic;
+    color: ${() => Theme.colors.textLight};
 `;
 
 export const DetailBottom = styled.div``;
