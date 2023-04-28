@@ -1,10 +1,19 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Theme } from '../Theme';
+import { PHONE, PHONEOUT } from '../abstracts/Mixins';
 
 export const CharacterDetailContainer = styled.div`
     display: grid;
     grid-template-columns: 55rem 1fr;
-    column-gap: 4.5rem;
+
+    ${PHONE(css`
+        grid-template-columns: 34.5rem;
+        row-gap: 5rem;
+    `)}
+
+    ${PHONEOUT(css`
+        column-gap: 4.5rem;
+    `)}
 `;
 
 export const OtherCharactersContainer = styled.div``;
@@ -13,10 +22,18 @@ export const OtherCharactersTitle = styled.p`
     margin-bottom: 2.1rem;
     font-size: ${() => Theme.typography.xlarge};
     font-weight: 600;
+
+    ${PHONE(css`
+        margin-bottom: 1rem;
+    `)}
 `;
 
 export const OtherCharacters = styled.div`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+    gap: 1.5rem;
+
+    ${PHONE(css`
+        grid-template-columns: 1fr;
+    `)}
 `;

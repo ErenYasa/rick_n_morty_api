@@ -1,11 +1,16 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Theme } from '../Theme';
+import { PHONE } from '../abstracts/Mixins';
 
 export const Card = styled.div`
     display: flex;
     flex-direction: column;
     gap: 1.9rem;
     cursor: pointer;
+
+    ${PHONE(css`
+        gap: 1.5rem;
+    `)}
 `;
 
 export const Image = styled.img`

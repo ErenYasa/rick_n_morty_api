@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { Theme } from '../Theme';
-import { PHONEOUT } from '../abstracts/Mixins';
+import { PHONE, PHONEOUT } from '../abstracts/Mixins';
 import { IFilterButtonsStyle } from './interfaces/filterButtonStyle.interface';
 
 export const FilterButtonsStyle = styled.button<IFilterButtonsStyle>`
@@ -14,6 +14,12 @@ export const FilterButtonsStyle = styled.button<IFilterButtonsStyle>`
     border-radius: ${() => Theme.radius.filterButton};
     border: 0.1rem solid;
     color: ${() => Theme.colors.dark};
+
+    ${PHONE(
+        css`
+            min-width: 14rem;
+        `,
+    )}
 
     &.disabled {
         pointer-events: none;

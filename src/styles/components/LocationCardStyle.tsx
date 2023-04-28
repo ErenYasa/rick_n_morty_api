@@ -1,5 +1,6 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Theme } from '../Theme';
+import { PHONE } from '../abstracts/Mixins';
 
 export const Card = styled.div`
     max-width: 44rem;
@@ -7,6 +8,10 @@ export const Card = styled.div`
     border-radius: ${() => Theme.radius.card};
     background-color: ${() => Theme.colors.primary};
     cursor: pointer;
+
+    ${PHONE(css`
+        padding: 1.5rem;
+    `)}
 `;
 
 export const Header = styled.div`

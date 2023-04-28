@@ -1,8 +1,13 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Theme } from '../Theme';
+import { PHONE } from '../abstracts/Mixins';
 
 export const Filters = styled.div`
     margin-bottom: 4rem;
+
+    ${PHONE(css`
+        margin-bottom: 3rem;
+    `)}
 `;
 
 export const FilterTitle = styled.p`
@@ -14,10 +19,21 @@ export const FilterTitle = styled.p`
 export const FilterBtnContainer = styled.div`
     display: flex;
     gap: 1.2rem;
+
+    ${PHONE(css`
+        overflow-y: hidden;
+        width: calc(100% + 15px);
+        padding-right: 1.5rem;
+        padding-bottom: 1rem;
+    `)}
 `;
 
 export const CharacterCardContainer = styled.div`
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(20rem, 33.6rem));
     gap: 3rem;
+
+    ${PHONE(css`
+        grid-template-columns: repeat(auto-fill, minmax(20rem, 34.5rem));
+    `)}
 `;
