@@ -1,11 +1,11 @@
 import React from 'react';
-import { CharacterDetailCardStyle } from '../styles/components/CharacterDetailCardStyle';
 import { CharacterDetailContainer } from '../styles/Views/CharacterDetail';
+import CharacterDetailCard from '../components/Cards/CharacterDetailCard';
 
 export default function CharactersDetail() {
     return (
         <CharacterDetailContainer>
-            <CharacterDetailCardStyle
+            <CharacterDetailCard
                 name="Japheths Grandson"
                 status="dead"
                 gender="Male"
