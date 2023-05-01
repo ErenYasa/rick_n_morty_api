@@ -15,6 +15,10 @@ export const ResetStyle = css`
         padding: 0;
     }
 
+    * {
+        -webkit-tap-highlight-color: transparent;
+    }
+
     /* Reapply the pointer cursor for anchor tags */
     a,
     button {

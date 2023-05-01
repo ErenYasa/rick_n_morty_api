@@ -6,7 +6,7 @@ import {
     DetailBottom,
     DetailTop,
     Right,
-} from '../../styles/components/OtherCharacterCardStyle';
+} from '../../styles/components/Cards/OtherCharacterCardStyle';
 import { Image } from '../Image/Image';
 
 export default function OtherCharacterCard() {

@@ -6,25 +6,25 @@ import {
     DetailRowLeft,
     DetailRowRight,
     Header,
-} from '../../styles/components/LocationCardStyle';
+} from '../../styles/components/Cards/LocationCardStyle';
 import { ILocationCard } from './interfaces/locationCard.interface';
 
 export function LocationCard({ name, type, dimension, residentCount }: ILocationCard) {
     return (
         <Card>
-            <Header>Earth (C-137)</Header>
+            <Header>{name}</Header>
             <Content>
                 <DetailRow>
                     <DetailRowLeft>Type</DetailRowLeft>
-                    <DetailRowRight> : planet</DetailRowRight>
+                    <DetailRowRight> : {type}</DetailRowRight>
                 </DetailRow>
                 <DetailRow>
                     <DetailRowLeft>Dimension</DetailRowLeft>
-                    <DetailRowRight> : C-123</DetailRowRight>
+                    <DetailRowRight> : {dimension}</DetailRowRight>
                 </DetailRow>
                 <DetailRow>
                     <DetailRowLeft>Resident count</DetailRowLeft>
-                    <DetailRowRight> : 23</DetailRowRight>
+                    <DetailRowRight> : {residentCount}</DetailRowRight>
                 </DetailRow>
             </Content>
         </Card>

@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
-import { Theme } from '../Theme';
-import { PHONE } from '../abstracts/Mixins';
+import { Theme } from '../../Theme';
+import { PHONE } from '../../abstracts/Mixins';
 
 export const Card = styled.div`
     max-width: 44rem;

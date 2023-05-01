@@ -1,5 +1,5 @@
 import React from 'react';
-import { Bottom, Card, Detail, Image, Name } from '../../styles/components/CharacterCardStyle';
+import { Bottom, Card, Detail, Image, Name } from '../../styles/components/Cards/CharacterCardStyle';
 import { ICharacterCard } from './interfaces/characterCard.interface';
 import * as Icon from '../Icons/Icons';
 

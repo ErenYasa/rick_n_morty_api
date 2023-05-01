@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { BackButton } from '../Buttons/BackButton';
-import { HeaderStyle } from '../../styles/components/HeaderStyle';
+import { HeaderStyle } from '../../styles/components/Header/HeaderStyle';
 import * as Icon from '../Icons/Icons';
 
 export default function Header() {

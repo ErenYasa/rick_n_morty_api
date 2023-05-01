@@ -1,12 +1,12 @@
-import { createGlobalStyle, css } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 import { ResetStyle } from './Reset';
-import { PHONE } from '../abstracts/Mixins';
 import { Theme } from '../Theme';
 
 export const GlobalStyles = createGlobalStyle`
     ${ResetStyle}
     :root {
         min-width: 320px;
+        height: 100%;
         font-family: 'roboto', sans-serif;
         line-height: 1.5;
         font-weight: 400;
@@ -22,15 +22,6 @@ export const GlobalStyles = createGlobalStyle`
 
     #root {
         height: 100%;
-
-        /* TEST */
-        ${PHONE(
-            css`
-                /* height: 50%;
-                width: 100px; */
-            `,
-        )}
-
     }
 
     html,

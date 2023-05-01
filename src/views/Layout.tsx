@@ -1,7 +1,6 @@
 import React, { Fragment, ReactElement, ReactNode } from 'react';
 import classNames from 'classnames';
-import { LayoutStyle } from '../styles/layout/LayoutStyle';
-import { LayoutContainer } from '../styles/components/LayoutContainerStyle';
+import { LayoutContainer, LayoutStyle } from '../styles/layout/LayoutStyle';
 import Header from '../components/Header/Header';
 
 export const Layout: React.FC<{ children: ReactNode; customClass?: string }> = ({

@@ -9,7 +9,7 @@ import {
     DetailTopRight,
     Image,
     Name,
-} from '../../styles/components/CharacterDetailCardStyle';
+} from '../../styles/components/Cards/CharacterDetailCardStyle';
 import * as Icon from '../Icons/Icons';
 import { ICharacterCardDetail } from './interfaces/characterDetailCard.interface';
 

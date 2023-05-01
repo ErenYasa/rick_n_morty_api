@@ -82,3 +82,31 @@ export const BackSign = (props: IIconProps) => (
         </defs>
     </svg>
 );
+
+export const PrevArrow = (props: IIconProps) => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0.58 0.42 7.88 8.96"
+        className={props.className}
+        width={props.width || '16px'}
+        height={props.height || '16px'}>
+        <path
+            d="M4.94 9.3849L0.58 4.9049L4.94 0.424901H8.46L4.1 4.9049L8.46 9.3849H4.94Z"
+            fill={props.color || '#000'}></path>
+    </svg>
+);
+
+export const NextArrow = (props: IIconProps) => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0.55 0.42 7.9 8.96"
+        className={props.className}
+        width={props.width || '16px'}
+        height={props.height || '16px'}>
+        <path
+            d="M0.554994 0.424901H4.09499L8.45499 4.9049L4.09499 9.3849H0.554994L4.93499 4.9049L0.554994 0.424901Z"
+            fill={props.color || '#000'}></path>
+    </svg>
+);

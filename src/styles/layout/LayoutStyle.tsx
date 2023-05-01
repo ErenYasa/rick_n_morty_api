@@ -2,6 +2,11 @@ import styled, { css } from 'styled-components';
 import { Theme } from '../Theme';
 import { PHONE } from '../abstracts/Mixins';
 
+export const LayoutContainer = styled.div`
+    width: 100%;
+    max-width: 1495px;
+`;
+
 export const LayoutStyle = styled.main`
     position: relative;
     display: flex;

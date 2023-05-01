@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
-import { Theme } from '../Theme';
-import { PHONE } from '../abstracts/Mixins';
+import { Theme } from '../../Theme';
+import { PHONE } from '../../abstracts/Mixins';
 
 export const HeaderStyle = styled.header`
     position: sticky;

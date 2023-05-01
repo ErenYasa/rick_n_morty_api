@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
-import { Theme } from '../Theme';
-import { PHONE, PHONEOUT } from '../abstracts/Mixins';
-import { IFilterButtonsStyle } from './interfaces/filterButtonStyle.interface';
+import { Theme } from '../../Theme';
+import { PHONE, PHONEOUT } from '../../abstracts/Mixins';
+import { IFilterButtonsStyle } from '../interfaces/filterButtonStyle.interface';
 
 export const FilterButtonsStyle = styled.button<IFilterButtonsStyle>`
     display: flex;

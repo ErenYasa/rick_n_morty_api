@@ -1,4 +1,4 @@
-import { BackButtonStyle } from '../../styles/components/BackButtonStyle';
+import { BackButtonStyle } from '../../styles/components/Buttons/BackButtonStyle';
 import * as Icon from '../Icons/Icons';
 
 interface IBackButton {

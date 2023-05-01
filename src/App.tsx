@@ -9,11 +9,13 @@ function App() {
     useLayoutEffect(() => {
         window.addEventListener('resize', () => {
             if (window.innerWidth < 768) dispatch(setMobileView(true));
+            else dispatch(setMobileView(false));
         });
 
         return () => {
             window.addEventListener('resize', () => {
                 if (window.innerWidth < 768) dispatch(setMobileView(true));
+                else dispatch(setMobileView(false));
             });
         };
     }, []);
