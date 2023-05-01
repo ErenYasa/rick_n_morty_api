@@ -15,57 +15,68 @@ const CharData = [
         name: 'Mc Bob',
         status: 'alive',
         species: 'Human',
+        img: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
     },
     {
         name: 'Mc Bob',
         status: 'alive',
         species: 'Human',
+        img: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
     },
     {
         name: 'Mc Bob',
         status: 'alive',
         species: 'Human',
+        img: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
     },
     {
         name: 'Mc Bob',
         status: 'alive',
         species: 'Human',
+        img: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
     },
     {
         name: 'Mc Bob',
         status: 'alive',
         species: 'Human',
+        img: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
     },
     {
-        name: 'Mc Joe',
+        name: 'Abradolf Lincler',
         status: 'alive',
         species: 'Human',
+        img: 'https://rickandmortyapi.com/api/character/avatar/7.jpeg',
     },
     {
-        name: 'Mc Joe',
+        name: 'Abradolf Lincler',
         status: 'alive',
         species: 'Human',
+        img: 'https://rickandmortyapi.com/api/character/avatar/7.jpeg',
     },
     {
-        name: 'Mc Joe',
+        name: 'Abradolf Lincler',
         status: 'alive',
         species: 'Human',
+        img: 'https://rickandmortyapi.com/api/character/avatar/7.jpeg',
     },
     {
-        name: 'Mc Joe',
+        name: 'Abradolf Lincler',
         status: 'alive',
         species: 'Human',
+        img: 'https://rickandmortyapi.com/api/character/avatar/7.jpeg',
     },
     {
-        name: 'Mc Joe',
+        name: 'Abradolf Lincler',
         status: 'alive',
         species: 'Human',
+        img: 'https://rickandmortyapi.com/api/character/avatar/7.jpeg',
     },
 ];
 
 export default function Characters() {
     const mobileView = useSelector((state: RootState) => state.App.mobileView);
-    const [currentItems, setCurrentItems] = useState<{ name: string; status: string; species: string }[]>();
+    const [currentItems, setCurrentItems] =
+        useState<{ name: string; status: string; species: string; img: string }[]>();
     const [pageCount, setPageCount] = useState(0);
     const [itemOffset, setItemOffset] = useState(0);
     const itemsPerPage = 5;
@@ -99,7 +110,7 @@ export default function Characters() {
                     renderArrowNext={(onClickHandler, hasNext) => NextArrow(onClickHandler, hasNext)}>
                     {currentItems?.map((d, i) => (
                         <Fragment key={i}>
-                            <CharacterCard name={d.name} status={d.status} species={d.species} />
+                            <CharacterCard name={d.name} status={d.status} species={d.species} img={d.img} />
                         </Fragment>
                     ))}
                 </Carousel>
@@ -107,7 +118,7 @@ export default function Characters() {
                 <CharacterCardContainer>
                     {currentItems?.map((d, i) => (
                         <Fragment key={i}>
-                            <CharacterCard name={d.name} status={d.status} species={d.species} />
+                            <CharacterCard name={d.name} status={d.status} species={d.species} img={d.img} />
                         </Fragment>
                     ))}
                 </CharacterCardContainer>

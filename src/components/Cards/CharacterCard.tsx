@@ -3,10 +3,10 @@ import { Bottom, Card, Detail, Image, Name } from '../../styles/components/Cards
 import { ICharacterCard } from './interfaces/characterCard.interface';
 import * as Icon from '../Icons/Icons';
 
-export function CharacterCard({ status, name, species }: ICharacterCard) {
+export function CharacterCard({ img, status, name, species }: ICharacterCard) {
     return (
         <Card>
-            <Image src="https://rickandmortyapi.com/api/character/avatar/1.jpeg" />
+            <Image src={img} />
             <Bottom>
                 <Name>{name}</Name>
                 <Detail status={status}>
