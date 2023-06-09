@@ -1,4 +1,3 @@
-import React from 'react';
 import {
     Bottom,
     Card,
@@ -7,29 +6,33 @@ import {
     DetailTop,
     DetailTopLeft,
     DetailTopRight,
-    Image,
     Name,
 } from '../../styles/components/Cards/CharacterDetailCardStyle';
 import * as Icon from '../Icons/Icons';
+import { Image } from '../Image/Image';
 import { ICharacterCardDetail } from './interfaces/characterDetailCard.interface';
 
-export default function CharacterDetailCard({ name, status, species, locationName, gender }: ICharacterCardDetail) {
+type Props = {
+    details: ICharacterCardDetail;
+};
+
+export default function CharacterDetailCard({ details }: Props) {
     return (
         <Card>
-            <Image src="https://rickandmortyapi.com/api/character/avatar/1.jpeg" />
+            <Image src={details.image} />
             <Bottom>
-                <Name>{name}</Name>
-                <Detail status={status}>
+                <Name>{details.name}</Name>
+                <Detail status={details.status}>
                     <DetailTop>
                         <DetailTopLeft>
                             <Icon.Dot />
-                            {status} - {species}
+                            {details.status} - {details.species}
                         </DetailTopLeft>
                         <DetailTopRight>
-                            {locationName} - {gender}
+                            {details.location.name} - {details.gender}
                         </DetailTopRight>
                     </DetailTop>
-                    <DetailBottom>{locationName}</DetailBottom>
+                    <DetailBottom>{details.location.name}</DetailBottom>
                 </Detail>
             </Bottom>
         </Card>

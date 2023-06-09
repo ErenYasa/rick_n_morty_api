@@ -17,7 +17,7 @@ export const Image = styled.img`
     aspect-ratio: 1/1;
     width: 100%;
     height: auto;
-    border-radius: ${() => Theme.radius.card};
+    border-radius: ${() => Theme.radius.primary};
     background-color: ${() => Theme.colors.placeholderGrey};
 `;
 
@@ -40,6 +40,6 @@ export const Detail = styled.div<{ status: string }>`
     font-weight: 500;
 
     svg {
-        color: ${({ status }) => (status === 'alive' ? '#98CD4D' : status === 'dead' ? '#B90000' : '#B8B8B8')};
+        color: ${({ status }) => (status === 'Alive' ? '#98CD4D' : status === 'Dead' ? '#B90000' : '#B8B8B8')};
     }
 `;

@@ -1,4 +1,3 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as Icon from '../components/Icons/Icons';
 import { Button, Container, Title } from '../styles/Views/ErrorPageStyle';

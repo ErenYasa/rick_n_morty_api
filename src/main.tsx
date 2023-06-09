@@ -4,13 +4,13 @@ import { ThemeProvider } from 'styled-components';
 import { Provider } from 'react-redux';
 import App from './App';
 import { Theme } from './styles/Theme';
-import { GlobalStyles } from './styles/base/Global';
+import { GlobalStyle } from './styles/base/Global';
 import { store } from './store/index';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <Provider store={store}>
         <ThemeProvider theme={Theme}>
-            <GlobalStyles />
+            <GlobalStyle />
             <App />
         </ThemeProvider>
     </Provider>,

@@ -125,6 +125,6 @@ export const ResetStyle = css`
     }
 
     a {
-        color: $linkColor;
+        color: #000;
     }
 `;

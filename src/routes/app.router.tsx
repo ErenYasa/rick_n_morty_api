@@ -17,7 +17,7 @@ export const Routes = () => {
             errorElement: <ErrorPage />,
         },
         {
-            path: '/characters',
+            path: '/characters/:id',
             element: (
                 <Layout>
                     <Characters />
@@ -26,7 +26,7 @@ export const Routes = () => {
             errorElement: <ErrorPage />,
         },
         {
-            path: '/detail',
+            path: '/detail/:id',
             element: (
                 <Layout>
                     <CharactersDetail />

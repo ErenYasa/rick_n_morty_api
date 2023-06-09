@@ -30,13 +30,13 @@ export const DESKTOP = (styles: FlattenSimpleInterpolation) => css`
     }
 `;
 
-export const SINGLE = (styles: FlattenSimpleInterpolation, query: string) => css`
+export const SINGLE = (query: string, styles: FlattenSimpleInterpolation) => css`
     @media (${query}) {
         ${styles}
     }
 `;
 
-export const MULTIPLE = (styles: FlattenSimpleInterpolation, query: string, query2: string) => css`
+export const MULTIPLE = (query: string, query2: string, styles: FlattenSimpleInterpolation) => css`
     @media (${`${query} and ${query2}`}) {
         ${styles}
     }

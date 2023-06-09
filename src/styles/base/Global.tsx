@@ -1,52 +1,17 @@
 import { createGlobalStyle } from 'styled-components';
 import { ResetStyle } from './Reset';
-import { Theme } from '../Theme';
 
-export const GlobalStyles = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
     ${ResetStyle}
-    :root {
-        min-width: 320px;
-        height: 100%;
-        font-family: 'roboto', sans-serif;
-        line-height: 1.5;
-        font-weight: 400;
-        font-size: 62.5%;
-        color: ${(props) => Theme.colors.text};
-        font-synthesis: none;
-        text-rendering: optimizeLegibility;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        -webkit-text-size-adjust: 100%;
-        touch-action: manipulation !important;
-    }
-
-    #root {
-        height: 100%;
-    }
-
-    html,
+    
     body {
         height: 100%;
         width: 100%;
         font-size: 1.6rem;
     }
 
-    .loader {
-        width: 2.8rem;
-        height: 2.8rem;
-        border: 0.3rem solid currentColor;
-        border-bottom-color: transparent;
-        border-radius: 50%;
-        display: inline-block;
-        box-sizing: border-box;
-        animation: rotation 1s linear infinite;
-
-        &.table-loader {
-            width: 1.8rem;
-            height: 1.8rem;
-            align-self: center;
-            border-width: 0.2rem;
-        }
+    #root {
+        height: 100%;
     }
 
     .inline-loader {

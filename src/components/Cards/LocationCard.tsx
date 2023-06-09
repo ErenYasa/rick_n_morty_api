@@ -1,4 +1,4 @@
-import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
     Card,
     Content,
@@ -9,9 +9,15 @@ import {
 } from '../../styles/components/Cards/LocationCardStyle';
 import { ILocationCard } from './interfaces/locationCard.interface';
 
-export function LocationCard({ name, type, dimension, residentCount }: ILocationCard) {
+export function LocationCard({ id, name, type, dimension, residentCount }: ILocationCard) {
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        if (id) navigate(`/characters/${id}`);
+    };
+
     return (
-        <Card>
+        <Card onClick={() => handleClick()}>
             <Header>{name}</Header>
             <Content>
                 <DetailRow>
@@ -24,7 +30,7 @@ export function LocationCard({ name, type, dimension, residentCount }: ILocation
                 </DetailRow>
                 <DetailRow>
                     <DetailRowLeft>Resident count</DetailRowLeft>
-                    <DetailRowRight> : {residentCount}</DetailRowRight>
+                    <DetailRowRight> : {residentCount?.length}</DetailRowRight>
                 </DetailRow>
             </Content>
         </Card>

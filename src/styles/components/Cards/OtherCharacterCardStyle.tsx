@@ -5,6 +5,7 @@ export const Card = styled.div`
     display: grid;
     grid-template-columns: 9rem 1fr;
     column-gap: 1.4rem;
+    cursor: pointer;
 `;
 
 export const Right = styled.div``;

@@ -9,15 +9,11 @@ export const Theme = {
         text: '#000000',
         textLight: '#818181',
         placeholderGrey: '#D9D9D9',
-        primaryTextColor: '#594F43',
-        secondaryTextColor: '#777777',
-        inputPlaceholder: '#C7C7C7',
         darkGrayText: '#303030',
         darkText: '#1A1A1A',
-        medium: '',
-        light: '',
-        danger: '',
         success: '#66A15A',
+        primaryGrey: '#f0f0f0',
+        SecondaryGrey: '#C7C7C7',
     },
     typography: {
         small: '1.3rem',
@@ -33,7 +29,7 @@ export const Theme = {
         pageTop: '30px',
     },
     radius: {
-        card: '1.5rem',
-        filterButton: '5rem',
+        primary: '1.5rem',
+        secondary: '5rem',
     },
 };

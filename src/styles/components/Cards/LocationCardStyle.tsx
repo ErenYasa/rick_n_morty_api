@@ -5,7 +5,7 @@ import { PHONE } from '../../abstracts/Mixins';
 export const Card = styled.div`
     max-width: 44rem;
     padding: 1.5rem 2.5rem;
-    border-radius: ${() => Theme.radius.card};
+    border-radius: ${() => Theme.radius.primary};
     background-color: ${() => Theme.colors.primary};
     cursor: pointer;
 

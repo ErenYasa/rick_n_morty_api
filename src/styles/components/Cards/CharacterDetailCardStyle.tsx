@@ -6,20 +6,19 @@ export const Card = styled.div`
     display: flex;
     flex-direction: column;
     gap: 1.9rem;
-    cursor: pointer;
 
     ${PHONE(css`
         gap: 1.5rem;
     `)}
 `;
 
-export const Image = styled.img`
-    aspect-ratio: 1/1;
-    width: 100%;
-    height: auto;
-    border-radius: ${() => Theme.radius.card};
-    background-color: ${() => Theme.colors.placeholderGrey};
-`;
+// export const Image = styled.img`
+//     aspect-ratio: 1/1;
+//     width: 100%;
+//     height: auto;
+//     border-radius: ${() => Theme.radius.primary};
+//     background-color: ${() => Theme.colors.placeholderGrey};
+// `;
 
 export const Bottom = styled.div``;
 
@@ -35,7 +34,7 @@ export const Detail = styled.div<{ status: string }>`
     font-size: ${() => Theme.typography.mid};
 
     svg {
-        color: ${({ status }) => (status === 'alive' ? '#98CD4D' : status === 'dead' ? '#B90000' : '#B8B8B8')};
+        color: ${({ status }) => (status === 'Alive' ? '#98CD4D' : status === 'Dead' ? '#B90000' : '#B8B8B8')};
     }
 `;
 

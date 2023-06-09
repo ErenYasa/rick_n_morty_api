@@ -11,6 +11,7 @@ export interface ILocationResult {
 }
 
 export interface IGetLocationsResponse {
+    json(): any;
     info: IInfo;
     results: ILocationResult[];
 }

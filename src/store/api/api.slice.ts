@@ -14,19 +14,38 @@ export const apiSlice = createApi({
                 url: `/character/?page=${page}&name=${name}&status=${status}&species=${species}&type=${type}&=${gender}`,
             }),
         }),
-        getCharacter: builder.query<IGetCharacterResponse, number>({
+        getCharacter: builder.query<IGetCharacterResponse, string | string[]>({
             query: (id) => ({
                 url: `/character/${id}`,
+                responseHandler: async (response: Response) => {
+                    const json = await response.json();
+                    return json.length > 1 ? json : [json];
+                },
             }),
         }),
         getLocations: builder.query<IGetLocationsResponse, IGetLocations>({
-            query: ({ page, name, type, dimension }) => ({
-                url: `/locations/?page=${page}&name=${name}&type=${type}&dimension=${dimension}`,
-            }),
+            query: ({ page, name, type, dimension }) => {
+                let url = `/location/?page=${page}`;
+                if (name) url += `&name=${name}`;
+                if (type) url += `&type=${type}`;
+                if (dimension) url += `&dimension=${dimension}`;
+
+                return {
+                    url,
+                    responseHandler: async (response: Response) => {
+                        const json = await response.json();
+                        return json;
+                    },
+                };
+            },
         }),
         getLocation: builder.query<IGetLocationResponse, number>({
             query: (id) => ({
                 url: `/location/${id}`,
+                responseHandler: async (response: Response) => {
+                    const json = await response.json();
+                    return json;
+                },
             }),
         }),
         getEpisodes: builder.query<IGetEpisodesResponse, IGetEpisodes>({
@@ -44,9 +63,12 @@ export const apiSlice = createApi({
 
 export const {
     useGetCharactersQuery,
+    useLazyGetCharacterQuery,
     useGetCharacterQuery,
     useGetLocationsQuery,
+    useLazyGetLocationsQuery,
     useGetLocationQuery,
+    useLazyGetLocationQuery,
     useGetEpisodesQuery,
     useGetEpisodeQuery,
 } = apiSlice;

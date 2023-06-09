@@ -1,9 +1,31 @@
 import styled, { css } from 'styled-components';
 import { Theme } from '../../Theme';
-import { PHONE, PHONEOUT } from '../../abstracts/Mixins';
+import { PHONE } from '../../abstracts/Mixins';
 import { IFilterButtonsStyle } from '../interfaces/filterButtonStyle.interface';
 
-export const FilterButtonsStyle = styled.button<IFilterButtonsStyle>`
+interface CheckboxProps {
+    status: string;
+    name: string;
+    value: string;
+}
+
+export const HiddenCheckbox = styled.input.attrs<CheckboxProps>(({ status, value, name, defaultChecked }) => ({
+    type: 'checkbox',
+    name,
+    value,
+    defaultChecked,
+}))`
+    appearance: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+`;
+
+export const Button = styled.label<IFilterButtonsStyle>`
+    user-select: none;
+    position: relative;
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -11,8 +33,10 @@ export const FilterButtonsStyle = styled.button<IFilterButtonsStyle>`
     padding: 1.4rem 1.1rem;
     font-weight: 500;
     font-size: 1.3rem;
-    border-radius: ${() => Theme.radius.filterButton};
+    text-transform: capitalize;
+    border-radius: ${() => Theme.radius.secondary};
     border: 0.1rem solid;
+    cursor: pointer;
     color: ${() => Theme.colors.dark};
 
     ${PHONE(
@@ -21,79 +45,72 @@ export const FilterButtonsStyle = styled.button<IFilterButtonsStyle>`
         `,
     )}
 
-    &.disabled {
-        pointer-events: none;
-        background-color: transparent;
-
-        svg {
-            opacity: 0.25;
-        }
-    }
-
-    ${({ status }) =>
-        status === 'alive' &&
+    ${({ status, checked }) =>
+        status === 'Alive' &&
         css`
             border-color: #98cd4d;
-            background-color: #98cd4d0d;
-
-            &:active {
-                background-color: #98cd4d80;
-            }
+            background-color: ${() => (checked ? '#98cd4d80' : '#98cd4d0d')};
 
             &.disabled {
                 border-color: #98cd4d80;
             }
 
-            ${PHONEOUT(css`
+            @media (min-width: 768px) {
                 &:hover {
-                    background-color: #98cd4d33;
+                    background-color: ${() => (checked ? '' : '#98cd4d33')};
                 }
-            `)}
+            }
         `}
 
-    ${({ status }) =>
-        status === 'dead' &&
+    ${({ status, checked }) =>
+        status === 'Dead' &&
         css`
             border-color: #b90000;
-            background-color: #b900000d;
-
-            &:focus {
-                background-color: #b9000080;
-            }
+            background-color: ${() => (checked ? '#b9000080' : '#b900000d')};
 
             &.disabled {
                 border-color: #b9000080;
             }
 
-            ${PHONEOUT(css`
+            @media (min-width: 768px) {
                 &:hover {
-                    background-color: #b9000033;
+                    background-color: ${() => (checked ? '' : '#b9000033')};
                 }
-            `)}
+            }
         `}
 
-    ${({ status }) =>
-        status === 'unknown' &&
+    ${({ status, checked }) =>
+        status === 'Unknown' &&
         css`
             border-color: #b8b8b8;
-            background-color: #b8b8b80d;
-
-            &:focus {
-                background-color: #b8b8b880;
-            }
+            background-color: ${() => (checked ? '#b8b8b880' : '#b8b8b80d')};
 
             &.disabled {
                 border-color: #b8b8b880;
             }
 
-            ${PHONEOUT(css`
+            @media (min-width: 768px) {
                 &:hover {
-                    background-color: #b8b8b833;
+                    background-color: ${() => (checked ? '' : '#b8b8b833')};
                 }
-            `)}
+            }
         `}
 
     svg {
-        color: ${({ status }) => (status === 'alive' ? '#98CD4D' : status === 'dead' ? '#B90000' : '#B8B8B8')};
+        color: ${({ status }) => (status === 'Alive' ? '#98CD4D' : status === 'Dead' ? '#B90000' : '#B8B8B8')};
+    }
+`;
+
+export const Container = styled.div`
+    position: relative;
+
+    &.disabled {
+        pointer-events: none;
+        background-color: transparent;
+        opacity: 0.5;
+
+        ${Button} {
+            cursor: not-allowed;
+        }
     }
 `;

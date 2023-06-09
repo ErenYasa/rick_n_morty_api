@@ -10,7 +10,7 @@ type location = {
     url: string;
 };
 
-export interface ICharacterResult {
+export interface ICharacter {
     id: number;
     name: string;
     status: string;
@@ -27,10 +27,10 @@ export interface ICharacterResult {
 
 export interface IGetCharactersResponse {
     info: IInfo;
-    results: ICharacterResult[];
+    results: ICharacter[];
 }
 
-export type IGetCharacterResponse = ICharacterResult;
+export type IGetCharacterResponse = ICharacter[];
 
 export interface IGetCharacters {
     page?: string;

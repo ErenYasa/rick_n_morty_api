@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { Theme } from '../Theme';
-import { PHONE, PHONEOUT } from '../abstracts/Mixins';
+import { PHONE, PHONEOUT, SINGLE } from '../abstracts/Mixins';
 
 export const CharacterDetailContainer = styled.div`
     display: grid;
@@ -10,6 +10,13 @@ export const CharacterDetailContainer = styled.div`
         grid-template-columns: 34.5rem;
         row-gap: 5rem;
     `)}
+
+    ${SINGLE(
+        'max-width: 430px',
+        css`
+            grid-template-columns: 100%;
+        `,
+    )}
 
     ${PHONEOUT(css`
         column-gap: 4.5rem;
