@@ -9,10 +9,11 @@ export const LayoutContainer = styled.div`
 
 export const LayoutStyle = styled.main`
     position: relative;
+    height: 100%;
     display: flex;
     justify-content: center;
     padding: 4rem;
-    background-color: ${() => Theme.colors.background};
+    background-color: ${Theme.colors.background};
 
     ${PHONE(css`
         padding: 1.5rem;

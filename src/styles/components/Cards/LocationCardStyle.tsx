@@ -1,12 +1,11 @@
 import styled, { css } from 'styled-components';
 import { Theme } from '../../Theme';
-import { PHONE } from '../../abstracts/Mixins';
+import { PHONE, textClamp } from '../../abstracts/Mixins';
 
 export const Card = styled.div`
-    max-width: 44rem;
     padding: 1.5rem 2.5rem;
-    border-radius: ${() => Theme.radius.primary};
-    background-color: ${() => Theme.colors.primary};
+    border-radius: ${Theme.radius.primary};
+    background-color: ${Theme.colors.primary};
     cursor: pointer;
 
     ${PHONE(css`
@@ -16,8 +15,10 @@ export const Card = styled.div`
 
 export const Header = styled.div`
     margin-bottom: 1rem;
-    font-size: ${() => Theme.typography.large};
+    font-size: ${Theme.typography.large};
     font-weight: 500;
+
+    ${textClamp(1)}
 `;
 
 export const Content = styled.div``;
@@ -31,11 +32,17 @@ export const DetailRow = styled.div`
 `;
 
 export const DetailRowLeft = styled.div`
-    width: 13rem;
-    font-size: ${() => Theme.typography.small};
+    width: 30%;
+    flex: 1 1 auto;
+    white-space: nowrap;
+    font-size: ${Theme.typography.small};
 `;
 
 export const DetailRowRight = styled.div`
-    font-size: ${() => Theme.typography.small};
+    width: 60%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: ${Theme.typography.small};
     font-weight: 500;
 `;

@@ -17,7 +17,7 @@ export function LocationCard({ id, name, type, dimension, residentCount }: ILoca
     };
 
     return (
-        <Card onClick={() => handleClick()}>
+        <Card title={name} onClick={() => handleClick()}>
             <Header>{name}</Header>
             <Content>
                 <DetailRow>
@@ -26,7 +26,7 @@ export function LocationCard({ id, name, type, dimension, residentCount }: ILoca
                 </DetailRow>
                 <DetailRow>
                     <DetailRowLeft>Dimension</DetailRowLeft>
-                    <DetailRowRight> : {dimension}</DetailRowRight>
+                    <DetailRowRight title={dimension}> : {dimension}</DetailRowRight>
                 </DetailRow>
                 <DetailRow>
                     <DetailRowLeft>Resident count</DetailRowLeft>

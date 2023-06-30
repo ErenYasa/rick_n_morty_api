@@ -12,7 +12,7 @@ export const HeaderStyle = styled.header`
     height: 12rem;
     padding-inline: 4rem;
     border-bottom: 0.1rem solid rgba(17, 176, 200, 0.11);
-    background-color: ${() => Theme.colors.background};
+    background-color: ${Theme.colors.background};
 
     ${PHONE(css`
         height: 8rem;
@@ -20,12 +20,16 @@ export const HeaderStyle = styled.header`
     `)}
 
     .logo {
-        margin-left: auto;
-        margin-right: auto;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
 
         ${PHONE(css`
-            width: 14rem;
-            height: 4rem;
+            svg {
+                width: 14rem;
+                height: 4rem;
+            }
         `)}
     }
 `;

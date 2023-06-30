@@ -3,7 +3,6 @@
 ---
 
 -   TypeScript
--   Sass
 -   Styled-components
 -   Redux toolkit
 -   Redux toolkit Query

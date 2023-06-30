@@ -1,35 +1,40 @@
-import React, { Fragment, useEffect, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import { RootState } from 'src/store';
 import { useSelector } from 'react-redux';
-import { Carousel } from 'react-responsive-carousel';
-import ReactPaginate from 'react-paginate';
 import { useParams } from 'react-router-dom';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper';
 import { ICharacter } from '../store/api/interfaces/character.interfaces';
-import { NextArrow, PrevArrow } from '../components/Carousel/CarouselArrows';
 import { CharacterCard } from '../components/Cards/CharacterCard';
 import { CharacterCardContainer, FilterTitle, Filters } from '../styles/Views/CharactersStyle';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import * as Icon from '../components/Icons/Icons';
 import { useLazyGetCharacterQuery, useLazyGetLocationQuery } from '../store/api/api.slice';
 import { FilterButtons } from '../components/Buttons/FilterButtons';
 import NoDataBox from '../components/Boxes/NoDataBox';
 import { PageTitle } from '../components/Texts/Texts';
 import { Loader } from '../styles/components/Misc/Loader';
+import PagePagination from '../components/Pagination/Pagination';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 export default function Characters() {
     const { mobileView, filter } = useSelector((state: RootState) => state.App);
+    const { id } = useParams();
     const [characters, setCharacters] = useState<ICharacter[]>();
     const [pageCount, setPageCount] = useState(0);
     const [itemOffset, setItemOffset] = useState(0);
-    const { id } = useParams();
     const itemsPerPage = 5;
 
+    /* QUERIES */
     const [getLocation, { data: LocationsData, isLoading }] = useLazyGetLocationQuery({});
     const [getCharacters, { data: charactersData }] = useLazyGetCharacterQuery({});
 
     useEffect(() => {
-        if (id) getLocation(+id);
-    }, [id, LocationsData]);
+        if (id) {
+            getLocation(+id);
+            sessionStorage.setItem('location_id', id);
+        }
+    }, [id]);
 
     useEffect(() => {
         if (LocationsData?.residents) {
@@ -80,13 +85,9 @@ export default function Characters() {
                                 <FilterButtons characters={characters} filter={filter} />
                             </Filters>
                             {mobileView ? (
-                                <Carousel
-                                    showIndicators={false}
-                                    showThumbs={false}
-                                    renderArrowPrev={(onClickHandler, hasPrev) => PrevArrow(onClickHandler, hasPrev)}
-                                    renderArrowNext={(onClickHandler, hasNext) => NextArrow(onClickHandler, hasNext)}>
+                                <Swiper modules={[Navigation, Pagination]} pagination navigation>
                                     {characters?.map((character: ICharacter, i: number) => (
-                                        <Fragment key={i}>
+                                        <SwiperSlide key={i}>
                                             <CharacterCard
                                                 id={character.id}
                                                 name={character.name}
@@ -94,9 +95,9 @@ export default function Characters() {
                                                 species={character.species}
                                                 image={character.image}
                                             />
-                                        </Fragment>
+                                        </SwiperSlide>
                                     ))}
-                                </Carousel>
+                                </Swiper>
                             ) : (
                                 <CharacterCardContainer>
                                     {characters?.map((character: ICharacter, i: number) => (
@@ -112,26 +113,9 @@ export default function Characters() {
                                     ))}
                                 </CharacterCardContainer>
                             )}
-                            <ReactPaginate
-                                onPageChange={handlePageClick}
-                                pageRangeDisplayed={2}
-                                marginPagesDisplayed={1}
-                                pageCount={pageCount}
-                                nextLabel={<Icon.NextArrow />}
-                                previousLabel={<Icon.PrevArrow />}
-                                pageClassName="page-item"
-                                pageLinkClassName="page-link"
-                                previousClassName="page-item"
-                                previousLinkClassName="page-link"
-                                nextClassName="page-item"
-                                nextLinkClassName="page-link"
-                                breakLabel="..."
-                                breakClassName="page-item"
-                                breakLinkClassName="page-link"
-                                containerClassName="pagination"
-                                activeClassName="active"
-                                renderOnZeroPageCount={null}
-                            />
+                            {LocationsData.residents.length > 5 && (
+                                <PagePagination handlePageClick={handlePageClick} pageCount={pageCount} />
+                            )}
                         </Fragment>
                     ) : (
                         <NoDataBox text="THERE IS NO CHARACTERS" />

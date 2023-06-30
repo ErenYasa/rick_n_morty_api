@@ -1,24 +1,22 @@
 import React, { Fragment, useEffect, useState } from 'react';
-import ReactPaginate from 'react-paginate';
 import { useDispatch, useSelector } from 'react-redux';
-import { LocationCard } from '../components/Cards/LocationCard';
-import { LocationCardContainer } from '../styles/Views/LocationsStyle';
-import * as Icon from '../components/Icons/Icons';
-import { useLazyGetLocationsQuery } from '../store/api/api.slice';
-import { ILocationResult } from '../store/api/interfaces/location.interfaces';
-import { setFilter } from '../store/slices/app.slice';
 import { RootState } from '../store';
+import { setFilter } from '../store/slices/app.slice';
+import { useLazyGetLocationsQuery } from '../store/api/api.slice';
+import { LocationCardContainer } from '../styles/Views/LocationsStyle';
+import { LocationCard } from '../components/Cards/LocationCard';
+import { ILocationResult } from '../store/api/interfaces/location.interfaces';
+import PagePagination from '../components/Pagination/Pagination';
 
 export default function Locations() {
     const { filter } = useSelector((state: RootState) => state.App);
+    const dispatch = useDispatch();
     const [currentItems, setCurrentItems] = useState<ILocationResult[]>();
     const [pageCount, setPageCount] = useState(0);
     const [itemOffset, setItemOffset] = useState(0);
-
-    const dispatch = useDispatch();
     const itemsPerPage = 20;
 
-    /* LOCATIONS QUERY */
+    /* QUERIES */
     const [getLocations, { data: dataLocations, isLoading }] = useLazyGetLocationsQuery({});
 
     useEffect(() => {
@@ -65,26 +63,7 @@ export default function Locations() {
                             </Fragment>
                         ))}
                     </LocationCardContainer>
-                    <ReactPaginate
-                        onPageChange={handlePageClick}
-                        pageRangeDisplayed={2}
-                        marginPagesDisplayed={1}
-                        pageCount={pageCount}
-                        nextLabel={<Icon.NextArrow />}
-                        previousLabel={<Icon.PrevArrow />}
-                        pageClassName="page-item"
-                        pageLinkClassName="page-link"
-                        previousClassName="page-item"
-                        previousLinkClassName="page-link"
-                        nextClassName="page-item"
-                        nextLinkClassName="page-link"
-                        breakLabel="..."
-                        breakClassName="page-item"
-                        breakLinkClassName="page-link"
-                        containerClassName="pagination"
-                        activeClassName="active"
-                        renderOnZeroPageCount={null}
-                    />
+                    <PagePagination handlePageClick={handlePageClick} pageCount={pageCount} />
                 </Fragment>
             ) : (
                 <div>LOADING</div>

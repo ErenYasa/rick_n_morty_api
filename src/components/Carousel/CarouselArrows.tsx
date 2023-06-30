@@ -6,7 +6,7 @@ export function PrevArrow(clickHandler: () => void, hasPrev: boolean, label?: st
     const classes = classNames({ disabled: !hasPrev });
 
     return (
-        <PrevArrowStyle type="button" className={classes} onClick={clickHandler}>
+        <PrevArrowStyle className={classes} onClick={clickHandler}>
             <Icon.PrevArrow color="#000" width="24" height="24" />
         </PrevArrowStyle>
     );
@@ -16,7 +16,7 @@ export function NextArrow(clickHandler: () => void, hasNext: boolean, label?: st
     const classes = classNames({ disabled: !hasNext });
 
     return (
-        <NextArrowStyle type="button" className={classes} onClick={clickHandler}>
+        <NextArrowStyle className={classes} onClick={clickHandler}>
             <Icon.NextArrow color="#000" width="24" height="24" />
         </NextArrowStyle>
     );

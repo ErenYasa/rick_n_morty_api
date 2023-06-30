@@ -42,7 +42,7 @@ export const MULTIPLE = (query: string, query2: string, styles: FlattenSimpleInt
     }
 `;
 
-export const textClamp = (lines: number, lineHeight: false) => css`
+export const textClamp = (lines: number, lineHeight: false | number = false) => css`
     display: -webkit-box;
     display: -moz-box;
     -webkit-box-orient: vertical;

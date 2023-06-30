@@ -24,6 +24,6 @@ export const appSlice: Slice<IAppState> = createSlice({
     },
 });
 
-export const { setAppLoading, setMobileView, setFilter } = appSlice.actions;
+export const { setAppLoading, setMobileView, setFilter, setOtherCharacters } = appSlice.actions;
 
 export default appSlice.reducer;

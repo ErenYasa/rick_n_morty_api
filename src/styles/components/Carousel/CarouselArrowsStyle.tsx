@@ -14,14 +14,18 @@ const CommonArrowStyle = css`
     }
 `;
 
-export const PrevArrowStyle = styled.button`
+export const PrevArrowStyle = styled.button.attrs(() => ({
+    type: 'button',
+}))`
     ${CommonArrowStyle}
     left: 0;
-    padding-left: 10px;
+    padding-left: 1rem;
 `;
 
-export const NextArrowStyle = styled.button`
+export const NextArrowStyle = styled.button.attrs(() => ({
+    type: 'button',
+}))`
     ${CommonArrowStyle}
     right: 0;
-    padding-right: 10px;
+    padding-right: 1rem;
 `;

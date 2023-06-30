@@ -11,8 +11,8 @@
             href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,500&display=swap"
             rel="stylesheet"
         />
-        <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-        <title>Ricky & Morty</title>
+        <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+        <title>Rick & Morty</title>
 
         <!-- ie to edge -->
         <script>
@@ -42,6 +42,12 @@
             }
             body {
                 min-height: 100%;
+                display: flex;
+            }
+            #root {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
             }
             .carousel.carousel-slider {
                 border-radius: 15px;
@@ -56,8 +62,14 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                margin-top: 50px;
                 font-size: 16px;
                 font-weight: 500;
+
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                left: 0;
             }
             .page-item a {
                 padding: 12px 19px;
@@ -70,6 +82,16 @@
                 align-items: center;
 
                 background: #d9d9d9;
+            }
+            .swiper-button-next,
+            .swiper-button-prev {
+                color: #000 !important;
+            }
+            .swiper-pagination {
+                bottom: 0 !important;
+            }
+            .swiper-pagination-bullet {
+                background-color: #000 !important;
             }
         </style>
     </head>

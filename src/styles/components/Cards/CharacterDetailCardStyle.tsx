@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { Theme } from '../../Theme';
-import { PHONE } from '../../abstracts/Mixins';
+import { PHONE, textClamp } from '../../abstracts/Mixins';
 
 export const Card = styled.div`
     display: flex;
@@ -24,14 +24,16 @@ export const Bottom = styled.div``;
 
 export const Name = styled.div`
     margin-bottom: 0.6rem;
-    font-size: ${() => Theme.typography.xlarge};
+    font-size: ${Theme.typography.xlarge};
     font-weight: 600;
+
+    ${textClamp(1)}
 `;
 
 export const Detail = styled.div<{ status: string }>`
     display: flex;
     flex-direction: column;
-    font-size: ${() => Theme.typography.mid};
+    font-size: ${Theme.typography.mid};
 
     svg {
         color: ${({ status }) => (status === 'Alive' ? '#98CD4D' : status === 'Dead' ? '#B90000' : '#B8B8B8')};
@@ -53,10 +55,10 @@ export const DetailTopLeft = styled.div`
 `;
 
 export const DetailTopRight = styled.div`
-    font-size: ${() => Theme.typography.small};
+    font-size: ${Theme.typography.small};
     font-weight: 300;
     font-style: italic;
-    color: ${() => Theme.colors.textLight};
+    color: ${Theme.colors.textLight};
 `;
 
 export const DetailBottom = styled.div``;

@@ -4,6 +4,7 @@ import { Button, Container, Title } from '../styles/Views/ErrorPageStyle';
 
 export default function ErrorPage() {
     const navigate = useNavigate();
+
     return (
         <Container>
             <Title>ERROR!</Title>

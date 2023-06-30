@@ -1,15 +1,9 @@
 import styled, { css } from 'styled-components';
 import { Theme } from '../../Theme';
 import { PHONE } from '../../abstracts/Mixins';
-import { IFilterButtonsStyle } from '../interfaces/filterButtonStyle.interface';
+import { IFilterButtonsStyle } from './interfaces/filterButtonStyle.interface';
 
-interface CheckboxProps {
-    status: string;
-    name: string;
-    value: string;
-}
-
-export const HiddenCheckbox = styled.input.attrs<CheckboxProps>(({ status, value, name, defaultChecked }) => ({
+export const HiddenCheckbox = styled.input.attrs(({ value, name, defaultChecked }) => ({
     type: 'checkbox',
     name,
     value,
@@ -34,10 +28,10 @@ export const Button = styled.label<IFilterButtonsStyle>`
     font-weight: 500;
     font-size: 1.3rem;
     text-transform: capitalize;
-    border-radius: ${() => Theme.radius.secondary};
+    border-radius: ${Theme.radius.secondary};
     border: 0.1rem solid;
     cursor: pointer;
-    color: ${() => Theme.colors.dark};
+    color: ${Theme.colors.dark};
 
     ${PHONE(
         css`

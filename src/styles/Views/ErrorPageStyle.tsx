@@ -11,7 +11,7 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.p`
-    font-size: ${() => Theme.typography.xlarge};
+    font-size: ${Theme.typography.xlarge};
     font-weight: 600;
 `;
 
@@ -19,5 +19,5 @@ export const Button = styled.button`
     display: flex;
     align-items: center;
     gap: 1rem;
-    font-size: ${() => Theme.typography.mid};
+    font-size: ${Theme.typography.mid};
 `;

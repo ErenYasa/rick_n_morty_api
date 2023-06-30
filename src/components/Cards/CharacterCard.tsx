@@ -1,8 +1,8 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Bottom, Card, Detail, Image, Name } from '../../styles/components/Cards/CharacterCardStyle';
+import { Bottom, Card, Detail, Name } from '../../styles/components/Cards/CharacterCardStyle';
 import { ICharacterCard } from './interfaces/characterCard.interface';
 import * as Icon from '../Icons/Icons';
+import { Image } from '../Image/Image';
 
 export function CharacterCard({ id, image, status, name, species }: ICharacterCard) {
     const navigate = useNavigate();
@@ -12,7 +12,7 @@ export function CharacterCard({ id, image, status, name, species }: ICharacterCa
     };
 
     return (
-        <Card onClick={() => handleClick()}>
+        <Card title={name} onClick={() => handleClick()}>
             <Image src={image} />
             <Bottom>
                 <Name>{name}</Name>

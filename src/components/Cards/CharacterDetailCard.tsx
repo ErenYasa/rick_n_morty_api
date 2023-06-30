@@ -18,7 +18,7 @@ type Props = {
 
 export default function CharacterDetailCard({ details }: Props) {
     return (
-        <Card>
+        <Card title={details.name}>
             <Image src={details.image} />
             <Bottom>
                 <Name>{details.name}</Name>

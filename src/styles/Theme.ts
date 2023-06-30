@@ -22,11 +22,11 @@ export const Theme = {
         xlarge: '2.4rem',
     },
     paddings: {
-        container: '15px',
-        pageTop: '30px',
+        container: '1.5rem',
+        pageTop: '3rem',
     },
     margins: {
-        pageTop: '30px',
+        pageTop: '3rem',
     },
     radius: {
         primary: '1.5rem',

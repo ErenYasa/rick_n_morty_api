@@ -1,4 +1,5 @@
-import React from 'react';
+import { ICharacter } from 'src/store/api/interfaces/character.interfaces';
+import { useNavigate } from 'react-router-dom';
 import {
     Card,
     CharacterName,
@@ -9,15 +10,27 @@ import {
 } from '../../styles/components/Cards/OtherCharacterCardStyle';
 import { Image } from '../Image/Image';
 
-export default function OtherCharacterCard() {
+type Props = {
+    character: ICharacter;
+};
+
+export default function OtherCharacterCard({ character }: Props) {
+    const { id, name, location, gender, image } = character;
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        if (id) navigate(`/detail/${id}`);
+    };
     return (
-        <Card>
-            <Image src="https://rickandmortyapi.com/api/character/avatar/1.jpeg" />
+        <Card title={name} onClick={() => handleClick()}>
+            <Image src={image} />
             <Right>
-                <CharacterName>Japheth’s Grandson</CharacterName>
+                <CharacterName>{name}</CharacterName>
                 <Detail>
-                    <DetailTop>Narnia Dimension</DetailTop>
-                    <DetailBottom>Narnian - Male</DetailBottom>
+                    <DetailTop>{location.name} Dimension</DetailTop>
+                    <DetailBottom>
+                        {location.name} - {gender}
+                    </DetailBottom>
                 </Detail>
             </Right>
         </Card>
