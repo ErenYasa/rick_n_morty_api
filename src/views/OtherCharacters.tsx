@@ -15,6 +15,7 @@ import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
 import { ICharacter } from '../store/api/interfaces/character.interfaces';
 import { useLazyGetCharacterQuery, useLazyGetLocationQuery } from '../store/api/api.slice';
+import Loader from '../components/Misc/Loader';
 
 type Props = {
     characterData: ICharacter;
@@ -108,11 +109,11 @@ export default function OtherCharacters({ characterData }: Props) {
                             )}
                         </Fragment>
                     ) : (
-                        <NoDataBox text="THERE IS NO OTHER CHARACTERS" widthStatus="100%" />
+                        <NoDataBox text="THERE IS NO OTHER CHARACTERS" customClass="othc" />
                     )}
                 </Fragment>
             ) : (
-                <div>LOADING</div>
+                <Loader />
             )}
         </OtherCharactersContainer>
     );

@@ -128,3 +128,5 @@ export const ResetStyle = css`
         color: #000;
     }
 `;
+
+export default ResetStyle;

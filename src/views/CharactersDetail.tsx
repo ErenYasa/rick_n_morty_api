@@ -5,6 +5,7 @@ import CharacterDetailCard from '../components/Cards/CharacterDetailCard';
 import { ICharacter } from '../store/api/interfaces/character.interfaces';
 import { useLazyGetCharacterQuery } from '../store/api/api.slice';
 import OtherCharacters from './OtherCharacters';
+import Loader from '../components/Misc/Loader';
 
 export default function CharactersDetail() {
     const { id } = useParams();
@@ -23,15 +24,15 @@ export default function CharactersDetail() {
 
     // UZUN METİNLER KISALTILACAK
     return (
-        <CharacterDetailContainer>
+        <Fragment>
             {!isLoading && characterDetail ? (
-                <Fragment>
+                <CharacterDetailContainer>
                     <CharacterDetailCard details={characterDetail} />
                     <OtherCharacters characterData={characterDetail} />
-                </Fragment>
+                </CharacterDetailContainer>
             ) : (
-                <div>LOADING</div>
+                <Loader />
             )}
-        </CharacterDetailContainer>
+        </Fragment>
     );
 }

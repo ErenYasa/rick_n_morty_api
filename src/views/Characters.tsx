@@ -11,7 +11,7 @@ import { useLazyGetCharacterQuery, useLazyGetLocationQuery } from '../store/api/
 import { FilterButtons } from '../components/Buttons/FilterButtons';
 import NoDataBox from '../components/Boxes/NoDataBox';
 import { PageTitle } from '../components/Texts/Texts';
-import { Loader } from '../styles/components/Misc/Loader';
+import Loader from '../components/Misc/Loader';
 import PagePagination from '../components/Pagination/Pagination';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -85,7 +85,7 @@ export default function Characters() {
                                 <FilterButtons characters={characters} filter={filter} />
                             </Filters>
                             {mobileView ? (
-                                <Swiper modules={[Navigation, Pagination]} pagination navigation>
+                                <Swiper modules={[Navigation, Pagination]} navigation>
                                     {characters?.map((character: ICharacter, i: number) => (
                                         <SwiperSlide key={i}>
                                             <CharacterCard
@@ -118,7 +118,7 @@ export default function Characters() {
                             )}
                         </Fragment>
                     ) : (
-                        <NoDataBox text="THERE IS NO CHARACTERS" />
+                        <NoDataBox text="THERE IS NO CHARACTERS" customClass="chr" />
                     )}
                 </Fragment>
             ) : (

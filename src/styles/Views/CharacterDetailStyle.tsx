@@ -24,17 +24,28 @@ export const CharacterDetailContainer = styled.div`
 `;
 
 export const OtherCharactersContainer = styled.div`
-    & .swiper {
+    .swiper {
+        padding-bottom: 2rem;
+
         ${PHONEOUT(css`
             max-width: 40rem;
         `)}
 
+        .swiper-button-prev,
+        .swiper-button-next {
+            height: calc(100% - 20px) !important;
+        }
+
         &-button-prev {
-            left: 0;
+            padding-left: 0 !important;
         }
 
         &-button-next {
-            right: 0;
+            padding-right: 0 !important;
+        }
+
+        .swiper-pagination {
+            bottom: 0 !important;
         }
     }
 `;

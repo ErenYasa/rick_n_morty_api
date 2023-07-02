@@ -10,7 +10,7 @@ const rotation = keyframes`
     }
 `;
 
-export const Loader = styled.div`
+export const Spinner = styled.div`
     display: inline-block;
     width: 2.8rem;
     height: 2.8rem;
@@ -18,4 +18,11 @@ export const Loader = styled.div`
     border-radius: 50%;
     border-bottom-color: transparent;
     animation: ${rotation} 1s linear infinite;
+`;
+
+export const Container = styled.div`
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `;

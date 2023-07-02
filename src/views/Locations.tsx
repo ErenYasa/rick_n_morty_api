@@ -7,6 +7,7 @@ import { LocationCardContainer } from '../styles/Views/LocationsStyle';
 import { LocationCard } from '../components/Cards/LocationCard';
 import { ILocationResult } from '../store/api/interfaces/location.interfaces';
 import PagePagination from '../components/Pagination/Pagination';
+import Loader from '../components/Misc/Loader';
 
 export default function Locations() {
     const { filter } = useSelector((state: RootState) => state.App);
@@ -66,7 +67,7 @@ export default function Locations() {
                     <PagePagination handlePageClick={handlePageClick} pageCount={pageCount} />
                 </Fragment>
             ) : (
-                <div>LOADING</div>
+                <Loader />
             )}
         </Fragment>
     );
